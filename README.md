@@ -15,7 +15,7 @@ This will be the best way to learn how to create, structure, and scale ReactJS a
 - Jade
 - Google auth
 - ExpressJS
-- MongoDB
+- Firebase
 - *[TODO] api system*
 
 # Specifics
