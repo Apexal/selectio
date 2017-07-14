@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div class="person-page">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>
+                    <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}
+                    <small class="right">added <b>10 days ago</b></small>    
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <img class="person-image" src="http://via.placeholder.com/250x250">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

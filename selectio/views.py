@@ -13,6 +13,11 @@ def persons(id=None):
     #db_session.add(new_person)
     #db_session.commit()
     
-    persons = Person.query.all()
-    print(persons)
-    return render_template("persons.html", persons=persons)
+    if id is None:
+        persons = Person.query.all()
+        print(persons)
+        return render_template("persons.html", persons=persons)
+    else:
+        person = Person.query.get(id)
+        print(person)
+        return render_template("person.html", person=person)
