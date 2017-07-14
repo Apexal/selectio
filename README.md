@@ -4,19 +4,10 @@
 # Idea
 I learn best by being around people better than me. In each person I know there are characteristics I admire and wish to see in myself, just as there are traits I observe in others that that I wish to avoid in myself.
 
-# Makeup
-This will be the best way to learn how to create, structure, and scale ReactJS applications from scratch (a skill that will be invaluable not only later on in life but very soon as I start working on the KidsTales web app.)
-
 # Components
-(NodeJS)
-- Webpack
-- Babel
-- React
-- Jade
-- Google auth
-- ExpressJS
-- Firebase
-- *[TODO] api system*
+(Python3)
+- Flask
+- MySQL (SQLAlchemy)
 
 # Specifics
 
