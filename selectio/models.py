@@ -11,13 +11,13 @@ class Person(Base):
     gender = Column(String(10))             # Male, Female
     age = Column(Integer)                   # e.g. 17, 54, 79
 
-    def __init__(self, first_name=None, last_name=None, title=None, relation=None, gender=None, age=None):
+    def __init__(self, first_name=None, last_name=None, title=None, relation=None, gender=None, description=None):
         self.first_name = first_name
         self.last_name = last_name
         self.title = title
         self.relation = relation
         self.gender = gender
-        self.age = age
+        self.description = description
 
     def __repr__(self):
         return '<User %r %r %r (%r)>' % (self.title, self.first_name, self.last_name, self.relation)
