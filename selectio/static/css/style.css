@@ -1,0 +1,13 @@
+body {
+    padding-top: 70px;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+/* User Index */
+.person-panel blockquote {
+    height: 100px;
+    margin-bottom: 0;
+}
+/* ---------- */
