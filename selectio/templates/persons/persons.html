@@ -25,7 +25,13 @@
                                     <span class="badge">{{ person.relation | title }}</span>
                                     <span class="badge">{{ person.gender | title }}</span>
                                 </div>
-                                <h3 class="panel-title"><b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}</h3>
+                                <h3 class="panel-title">
+                                    {% if person.nickname != person.first_name %}
+                                        <b>{{ person.nickname}}</b> <span class="text-muted"> | <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}</span>
+                                    {% else %}
+                                        <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}
+                                    {% endif %}
+                                </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="media">
@@ -37,6 +43,7 @@
                                     <div class="media-body">
                                         <blockquote>
                                             <p>{{ person.description }}</p>
+                                            <footer>Your Description of {{ person.first_name }}</footer>
                                         </blockquote>
                                     </div>
                                 </div>

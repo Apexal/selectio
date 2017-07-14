@@ -1,6 +1,6 @@
 from selectio import app, db_session
 from selectio.models import *
-from flask import render_template, request, flash
+from flask import render_template, request, redirect, url_for, flash
 
 @app.route('/')
 def index():
@@ -28,13 +28,18 @@ def add_person():
         # Get all values from form
         first_name = request.form['firstName'].strip()
         last_name = request.form['lastName'].strip()
+        nickname = first_name
+
+        if 'nickname' in request.form:
+            nickname = request.form['nickname'].strip()
+
         title = request.form['title'].strip()
         relation = request.form['relation'].strip().lower()
         gender = request.form['gender'].strip().lower()
         description = request.form['description'].strip()
 
         # Create new person
-        new_person = Person(first_name, last_name, title, relation, gender, description)
+        new_person = Person(first_name, last_name, nickname, title, relation, gender, description)
         db_session.add(new_person)
         db_session.commit()
 
