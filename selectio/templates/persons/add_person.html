@@ -1,0 +1,73 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div class="add-person-page">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header">
+                <h1>Add Person</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form id="add-person-form" method="GET">
+                <!-- first_name=None, last_name=None, title=None, relation=None, gender=None, age=None -->
+                
+                <div class="form-group">
+                    <datalist id="titles">
+                        {% for title in titles %}
+                            <option value="{{ title }}">
+                        {% endfor %}
+                    </datalist>
+
+                    <label for="title">Title</label>
+                    <input class="form-control" list="titles" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="form-control" id="first-name" name="firstName" placeholder="First Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="form-control" id="last-name" name="lastName" placeholder="Last Name" required>
+                </div>
+
+                <div class="form-group">
+                    <datalist id="relations">
+                        {% for relation in relations %}
+                            <option value="{{ relation | title }}">
+                        {% endfor %}
+                    </datalist>
+
+                    <label for="relation">Relation</label>
+                    <input class="form-control" list="relations" id="relation" name="relation" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" required>
+                    </textarea>
+                </div>
+                <hr>
+                <a class="btn btn-danger" href="/persons">Cancel</a>
+                <button type="submit" class="btn btn-primary">Add Person</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
