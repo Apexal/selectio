@@ -1,4 +1,4 @@
-from selectio import app
+from selectio import app, db_session
 from flask import render_template
 
 @app.route('/')
