@@ -43,3 +43,8 @@ def add_person():
         titles = ['Mr.', 'Mrs.', 'Ms.', 'Fr.', 'Dr.']
         relations = ['self', 'brother', 'sister', 'mother', 'father', 'friend', 'classmate']
         return render_template('persons/add_person.html', titles=titles, relations=relations)
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
