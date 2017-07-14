@@ -24,20 +24,19 @@
                                 <div class="person-tags right">
                                     <span class="badge">{{ person.relation | title }}</span>
                                     <span class="badge">{{ person.gender | title }}</span>
-                                    <span class="badge">{{ person.age }} years old</span>
                                 </div>
                                 <h3 class="panel-title"><b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="media">
                                     <div class="media-left">
-                                        <a href="#">
+                                        <a href="/persons/{{ person.id }}">
                                             <img class="media-object" src="http://via.placeholder.com/100x100" alt="Placeholder picture.">
                                         </a>
                                     </div>
                                     <div class="media-body">
                                         <blockquote>
-                                            <p>Short excerpt of person description goes here...</p>
+                                            <p>{{ person.description }}</p>
                                         </blockquote>
                                     </div>
                                 </div>
@@ -45,10 +44,17 @@
                             <div class="panel-footer text-muted">Added <b>10 days ago</b></div>
                         </div>
                     </div>
+                    
                 {% endfor %}
             {% else %}
-                <p class="text-center text-muted">There are no persons added yet.<br><a class="btn btn-default" href="/persons/add">Add Person</a></p>
+                <p class="text-center text-muted">There are no persons added yet.</p>
             {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <hr>
+            <a class="btn btn-default" href="/persons/add">Add Person</a>
         </div>
     </div>
 </div>
