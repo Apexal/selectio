@@ -9,10 +9,6 @@ def index():
 @app.route('/persons')
 @app.route('/persons/<id>')
 def persons(id=None):
-    #new_person = Person("Frank", "Matranga", "Mr.", "self", "Male", 17)
-    #db_session.add(new_person)
-    #db_session.commit()
-
     if id is None:
         persons = Person.query.all()
         print(persons)
