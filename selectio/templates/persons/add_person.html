@@ -15,17 +15,6 @@
         <div class="col-xs-12">
             <form id="add-person-form" method="POST">
                 <!-- first_name=None, last_name=None, title=None, relation=None, gender=None, age=None -->
-                
-                <div class="form-group">
-                    <datalist id="titles">
-                        {% for title in titles %}
-                            <option value="{{ title }}">
-                        {% endfor %}
-                    </datalist>
-
-                    <label for="title">Title</label>
-                    <input class="form-control" list="titles" id="title" name="title" required>
-                </div>
 
                 <div class="form-group">
                     <label for="gender">Gender</label>

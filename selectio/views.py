@@ -33,21 +33,19 @@ def add_person():
         if 'nickname' in request.form:
             nickname = request.form['nickname'].strip()
 
-        title = request.form['title'].strip()
         relation = request.form['relation'].strip().lower()
         gender = request.form['gender'].strip().lower()
         description = request.form['description'].strip()
 
         # Create new person
-        new_person = Person(first_name, last_name, nickname, title, relation, gender, description)
+        new_person = Person(first_name, last_name, nickname, relation, gender, description)
         db_session.add(new_person)
         db_session.commit()
 
         return redirect(url_for('persons'))
     else:
-        titles = ['Mr.', 'Mrs.', 'Ms.', 'Fr.', 'Dr.']
         relations = ['self', 'brother', 'sister', 'mother', 'father', 'friend', 'classmate']
-        return render_template('persons/add_person.html', titles=titles, relations=relations)
+        return render_template('persons/add_person.html', relations=relations)
 
 
 @app.errorhandler(404)

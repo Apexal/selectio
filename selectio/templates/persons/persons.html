@@ -27,9 +27,9 @@
                                 </div>
                                 <h3 class="panel-title">
                                     {% if person.nickname != person.first_name %}
-                                        <b>{{ person.nickname}}</b> <span class="text-muted"> | <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}</span>
+                                        <b>{{ person.nickname}}</b> <span class="text-muted"> | {{ person.first_name }} {{ person.last_name }}</span>
                                     {% else %}
-                                        <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}
+                                        {{ person.first_name }} {{ person.last_name }}
                                     {% endif %}
                                 </h3>
                             </div>
