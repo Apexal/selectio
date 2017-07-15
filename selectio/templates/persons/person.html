@@ -28,17 +28,26 @@
 
     <div class="row">
         <div class="col-xs-12">
-            <hr>
+            
+            <div class="page-header">
+                <h2>
+                    <small class="right">{{ person.traits | length }} total</small>
+                    Traits
+                </h2>
+            </div>
+        </div>
+
+        <div class="col-xs-12">            
             {% if person.traits %}
                 {% for trait in person.traits %}
                     <div class="panel panel-{{ trait.quality | quality_to_panel }} trait-panel">
                         <div class="panel-heading">
+                            <small class="right">Weight {{ trait.weight }}</small>
                             <h3 class="panel-title">{{ trait.name }}</h3>
-                            <span class="right">Weight {{ trait.weight }}</span>
                         </div>
                         <div class="panel-body">
-                            <div class="well well-sm">
-                                <b>Description</b> <p>{{ trait.description }}</p>
+                            <div class="trait-description">
+                                <p>{{ trait.description }}</p>
                             </div>
                         </div>
                     </div>
