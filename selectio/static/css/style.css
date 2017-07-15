@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .left { float: left; }
@@ -10,3 +10,9 @@ body {
     margin-bottom: 0;
 }
 /* ---------- */
+
+#description {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 200px;
+}

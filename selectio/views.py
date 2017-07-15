@@ -40,7 +40,7 @@ def add_person():
 
         return redirect(url_for('persons'))
     else:
-        relations = ['self', 'brother', 'sister', 'mother', 'father', 'friend', 'classmate']
+        relations = ['self', 'partner', 'sibling', 'parent', 'family', 'friend', 'classmate', 'teacher', 'boss', 'co-worker']
         return render_template('persons/add_person.html', relations=relations)
 
 @app.errorhandler(404)
