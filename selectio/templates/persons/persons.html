@@ -19,7 +19,7 @@
             {% if persons %}
                 {% for person in persons %}
                     <div class="col-xs-12 col-lg-6">
-                        <div class="person-panel panel panel-{% if person.relation == 'self' %}danger{% else %}default{% endif %}">
+                        <div class="person-panel panel panel-{% if person.relation == 'self' %}info{% else %}default{% endif %}">
                             <div class="panel-heading">
                                 <div class="person-tags right">
                                     <a href="?relation={{ person.relation }}"><span class="badge">{{ person.relation | title }}</span></a>
