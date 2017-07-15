@@ -2,6 +2,7 @@ import os
 from flask import Flask
 app = Flask(__name__)
 
+import selectio.helpers
 from selectio.database import db_session, init_db
 from selectio.models import *
 

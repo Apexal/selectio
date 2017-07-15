@@ -31,7 +31,7 @@
             <hr>
             {% if person.traits %}
                 {% for trait in person.traits %}
-                    <div class="panel panel-default trait-panel">
+                    <div class="panel panel-{{ trait.quality | quality_to_panel }} trait-panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">{{ trait.name }}</h3>
                             <span class="right">Weight {{ trait.weight }}</span>
@@ -40,7 +40,6 @@
                             <div class="well well-sm">
                                 <b>Description</b> <p>{{ trait.description }}</p>
                             </div>
-
                         </div>
                     </div>
                 {% endfor %}
