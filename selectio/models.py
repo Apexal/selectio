@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, DateTime
 from selectio.database import Base
+import datetime
 
 class Person(Base):
     __tablename__ = 'persons'
@@ -10,6 +11,8 @@ class Person(Base):
     relation = Column(String(50))           # e.g. self, brother, friend, classmate
     gender = Column(String(10))             # e.g. Male, Female
     description = Column(String(250))       # e.g. Coolest guy ever...
+
+    added_date = Column(DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, first_name=None, last_name=None, nickname=None, relation=None, gender=None, description=None):
         self.first_name = first_name

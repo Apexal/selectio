@@ -22,8 +22,8 @@
                         <div class="person-panel panel panel-default">
                             <div class="panel-heading">
                                 <div class="person-tags right">
-                                    <span class="badge">{{ person.relation | title }}</span>
-                                    <span class="badge">{{ person.gender | title }}</span>
+                                    <a href="?relation={{ person.relation }}"><span class="badge">{{ person.relation | title }}</span></a>
+                                    <a href="?gender={{ person.gender }}"><span class="badge">{{ person.gender | title }}</span></a>
                                 </div>
                                 <h3 class="panel-title">
                                     {% if person.nickname != person.first_name %}
@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-footer text-muted">Added <b>10 days ago</b></div>
+                            <div class="panel-footer text-muted">Added <b>{{ person.added_date.strftime('%x') }}</b></div>
                         </div>
                     </div>
                     

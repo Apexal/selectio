@@ -8,7 +8,7 @@
             <div class="page-header">
                 <h1>
                     <b>{{ person.title }}</b> {{ person.first_name }} {{ person.last_name }}
-                    <small class="right">added <b>10 days ago</b></small>    
+                    <small class="right">added <b>{{ person.added_date.strftime('%x') }}</b></small>    
                 </h1>
             </div>
         </div>
