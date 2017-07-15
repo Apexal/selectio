@@ -16,7 +16,7 @@ def persons(id=None):
     else:
         person = Person.query.get(id)
         print(person)
-        return render_template('persons/person.html', person=person)
+        return render_template('persons/person.html', person=person, QualityEnum=QualityEnum)
 
 @app.route('/persons/add', methods=['POST', 'GET'])
 def add_person():
