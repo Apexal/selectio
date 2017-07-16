@@ -42,7 +42,7 @@
                 {% for trait in person.traits %}
                     <div class="panel panel-{{ trait.quality | quality_to_panel }} trait-panel">
                         <div class="panel-heading">
-                            <small class="right">Weight {{ trait.weight }}</small>
+                            <small style="color: {{ trait.color() }}" class="right">Weight {{ trait.weight }}</small>
                             <h3 class="panel-title">{{ trait.name }}</h3>
                         </div>
                         <div class="panel-body">

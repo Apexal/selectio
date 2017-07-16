@@ -42,3 +42,13 @@ class PersonTrait(Base):
     quality = Column(Enum(QualityEnum))
     weight = Column(SmallInteger)
     description = Column(String(300))
+
+
+    def color(self):
+        negative_colors = ['#ffe6e6', '#ffcccc', '#ffb3b3', '#ff9999', '#ff8080', '#ff6666', '#ff4d4d', '#ff3333', '#ff1a1a', '#ff0000']
+        positive_colors = ['#e6ffe6', '#ccffcc', '#b3ffb3', '#99ff99', '#80ff80', '#66ff66', '#4dff4d', '#33ff33', '#1aff1a', '#00ff00']
+        
+        if self.quality == QualityEnum.neutral:
+            return None
+        
+        return negative_colors[self.weight - 1] if self.quality == QualityEnum.negative else positive_colors[self.weight - 1]
